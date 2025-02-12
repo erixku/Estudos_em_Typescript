@@ -85,4 +85,4 @@ function  showProductDetails({name, price}: {name: string, price: number}): stri
     return `O nome do produto é ${name} e seu preço é ${price}`;
 }
 
-const shirt = {name: "Camiseta", price: 49.90};
+const tshirt = {name: "Camiseta", price: 49.90};
