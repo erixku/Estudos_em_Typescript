@@ -18,4 +18,29 @@ var server = {
     hd: "2TB",
     ram: "32GB"
 };
-console.log(getSomeKey(server, "ram"));
+function showCharName(obj, key) {
+    return "".concat(obj[key]);
+}
+var myChar = {
+    name: "Erick",
+    age: 19,
+    hasDriveLicense: false
+};
+//console.log(showCharName(myChar, 'name'));
+//6. Typeof Type Operator - mesmo do Keyof, porém agora com tipos
+var userName = "Erick";
+var username2 = "Naju";
+var userName3 = "Lana";
+var newTruck = {
+    km: 100000,
+    kg: 2000,
+    description: "Caminhão para pouca carga"
+};
+function showKm(km) {
+    console.log("O ve\u00EDculo tem a Km de ".concat(km));
+}
+;
+;
+var someVar = 5;
+var someVar2 = true;
+var testing = "some text";

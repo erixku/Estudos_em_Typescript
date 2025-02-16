@@ -36,3 +36,64 @@ const server = {
 }
 
 //console.log(getSomeKey(server, "ram"));
+
+//5. Keyof Type Operator - Podemos criar novos tipos, até mesmo com base em objetos ou suas chaves
+type Character = {name: string, age: number, hasDriveLicense: boolean};
+
+type C = keyof Character;
+
+function showCharName(obj: Character, key: C):string {
+    return `${obj[key]}`;
+}
+
+const myChar: Character = {
+    name: "Erick",
+    age: 19,
+    hasDriveLicense: false
+}
+
+//console.log(showCharName(myChar, 'name'));
+
+//6. Typeof Type Operator - mesmo do Keyof, porém agora com tipos
+const userName: string = "Erick";
+const username2: typeof userName = "Naju";
+
+type x = typeof userName;
+const userName3: x = "Lana";
+
+//7. Indexed Access Type - cria um tipo baseado em uma chave específica de um objeto
+type Truck = {km: number, kg: number, description: string};
+type Km = Truck["km"];
+
+const newTruck: Truck = {
+    km: 100000,
+    kg: 2000,
+    description: "Caminhão para pouca carga"
+}
+function showKm(km: Km) {
+    console.log(`O veículo tem a Km de ${km}`);
+}
+//showKm(newTruck.km);
+
+//8. Conditional Type - Cria um tipo baseado em uma condição
+interface A {};
+interface B extends A {};
+interface Teste {
+    showName(): string;
+}
+
+type myType = B extends A ? number : string;
+type myTipeB = Teste extends {showNumber(): number} ? string : boolean;
+
+const someVar: myType = 5
+const someVar2: myTipeB = true;
+
+//9. Template Literals Type - Criação com Template Literals, o tipo que só aceita o que ele possuir
+type testeA = "text";
+type customType = `some ${testeA}`;
+
+const testing: customType = "some text";
+
+type a1 = "Testando";
+type a2 = "Union";
+type a3 = `${a1}` | `${a2}`;
