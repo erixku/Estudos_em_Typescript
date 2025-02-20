@@ -1,0 +1,11 @@
+O que são decorators?
+Podem adicionar funcionalidades extras à classes e funções, criando novas funções a partir de "@bla",
+a função adicional será chamada assim em que o item em que ele foi definido for executado, como por exemplo,
+se um decorator foi definido em uma classe, toda vez que o construtor dela for executado, o decorator
+também será executado.
+
+Como habilitar ele?
+Adicionando uma configuração no arquivo tsconfig.js.
+
+O decorator possui uma série de argumentos especiais, sendo eles: target, propertyKey e descriptor, e por meio
+deles podemos descobrir em qual lugar ele foi executado.
